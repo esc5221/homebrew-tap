@@ -1,11 +1,11 @@
 class ClaudeCodeViewer < Formula
   desc "Desktop viewer for Claude Code CLI sessions"
   homepage "https://github.com/esc5221/claude-viewer"
-  version "1.0.3"
+  version "1.0.4"
   
   on_macos do
     url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude.Code.Viewer-#{version}-arm64.dmg"
-    sha256 "37ec5384632901ad2a1882bd094234ec7e07afd625f9631e63f85d72b9ac5fda"
+    sha256 "2e1c629f14917ff47de81933a8220530904236a5d4d7746ed23505326cccde0f"
   end
   
   on_linux do
@@ -17,8 +17,8 @@ class ClaudeCodeViewer < Formula
     if OS.mac?
       # DMG 마운트 및 앱 설치
       system "hdiutil", "attach", cached_download
-      prefix.install "/Volumes/Claude Code Viewer #{version}-arm64 1/Claude Code Viewer.app"
-      system "hdiutil", "detach", "/Volumes/Claude Code Viewer #{version}-arm64 1"
+      prefix.install "/Volumes/Claude Code Viewer/Claude Code Viewer.app"
+      system "hdiutil", "detach", "/Volumes/Claude Code Viewer"
       
       # CLI 심볼릭 링크 생성
       bin.install_symlink prefix/"Claude Code Viewer.app/Contents/Resources/cli/claude-viewer-cli.js" => "claude-viewer"
