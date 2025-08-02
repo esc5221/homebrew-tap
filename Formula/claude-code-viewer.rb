@@ -7,41 +7,15 @@ class ClaudeCodeViewer < Formula
     url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude.Code.Viewer-#{version}-arm64.dmg"
     sha256 "2e1c629f14917ff47de81933a8220530904236a5d4d7746ed23505326cccde0f"
   end
-  
-  on_linux do
-    url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/claude-code-viewer-#{version}-linux.AppImage"
-    sha256 "REPLACE_WITH_ACTUAL_SHA256"
-  end
 
   def install
-    if OS.mac?
-      # DMG 마운트 및 앱 설치
-      system "hdiutil", "attach", cached_download
-      prefix.install "/Volumes/Claude Code Viewer/Claude Code Viewer.app"
-      system "hdiutil", "detach", "/Volumes/Claude Code Viewer"
-      
-      # CLI 심볼릭 링크 생성
-      bin.install_symlink prefix/"Claude Code Viewer.app/Contents/Resources/cli/claude-viewer-cli.js" => "claude-viewer"
-    else
-      # Linux AppImage 설치
-      bin.install "claude-code-viewer-#{version}-linux.AppImage" => "claude-code-viewer"
-      chmod 0755, bin/"claude-code-viewer"
-    end
-  end
-
-  def caveats
-    on_macos do
-      <<~EOS
-        Claude Code Viewer.app was installed to:
-          #{prefix}/Claude Code Viewer.app
-        
-        To use the CLI integration:
-          claude-viewer <session-file>
-        
-        You may want to add the app to your Applications folder:
-          ln -s "#{prefix}/Claude Code Viewer.app" /Applications/
-      EOS
-    end
+    system "hdiutil", "attach", cached_download
+    prefix.install Dir["/Volumes/Claude Code Viewer/*.app"].first
+    system "hdiutil", "detach", "/Volumes/Claude Code Viewer"
+    
+    # CLI 링크
+    bin.install_symlink prefix/"Claude Code Viewer.app/Contents/Resources/cli/claude-viewer-cli.js" => "claude-viewer"
+    bin.install_symlink prefix/"Claude Code Viewer.app/Contents/Resources/cli/claude-viewer-cli.js" => "ccviewer"
   end
 
   test do
