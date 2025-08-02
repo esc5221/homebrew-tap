@@ -1,11 +1,11 @@
 class ClaudeCodeViewer < Formula
   desc "Desktop viewer for Claude Code CLI sessions"
   homepage "https://github.com/esc5221/claude-viewer"
-  version "1.0.0"
+  version "1.0.3"
   
   on_macos do
-    url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/claude-code-viewer-#{version}-mac.dmg"
-    sha256 "REPLACE_WITH_ACTUAL_SHA256"
+    url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude%20Code%20Viewer-#{version}-arm64.dmg"
+    sha256 "37ec5384632901ad2a1882bd094234ec7e07afd625f9631e63f85d72b9ac5fda"
   end
   
   on_linux do
