@@ -17,8 +17,8 @@ class ClaudeCodeViewer < Formula
     if OS.mac?
       # DMG 마운트 및 앱 설치
       system "hdiutil", "attach", cached_download
-      prefix.install "/Volumes/Claude Code Viewer/Claude Code Viewer.app"
-      system "hdiutil", "detach", "/Volumes/Claude Code Viewer"
+      prefix.install "/Volumes/Claude Code Viewer #{version}-arm64 1/Claude Code Viewer.app"
+      system "hdiutil", "detach", "/Volumes/Claude Code Viewer #{version}-arm64 1"
       
       # CLI 심볼릭 링크 생성
       bin.install_symlink prefix/"Claude Code Viewer.app/Contents/Resources/cli/claude-viewer-cli.js" => "claude-viewer"
