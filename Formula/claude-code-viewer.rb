@@ -4,7 +4,7 @@ class ClaudeCodeViewer < Formula
   version "1.0.3"
   
   on_macos do
-    url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude%20Code%20Viewer-#{version}-arm64.dmg"
+    url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude.Code.Viewer-#{version}-arm64.dmg"
     sha256 "37ec5384632901ad2a1882bd094234ec7e07afd625f9631e63f85d72b9ac5fda"
   end
   
