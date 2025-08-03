@@ -1,6 +1,6 @@
 cask "claude-code-viewer" do
-  version "1.0.4"
-  sha256 "2e1c629f14917ff47de81933a8220530904236a5d4d7746ed23505326cccde0f"
+  version "1.0.5"
+  sha256 "d1005f43d0d60e90ff5a4e56ef95563a78d4ce139b62f3225e00a817762ba50c"
 
   url "https://github.com/esc5221/claude-viewer/releases/download/v#{version}/Claude.Code.Viewer-#{version}-arm64.dmg"
   name "Claude Code Viewer"
