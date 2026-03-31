@@ -1,6 +1,6 @@
 cask "claude-clipboard-cleaner" do
-  version "1.0.0"
-  sha256 "dc87971557adb6ca6f32279bc5e533253d65d8cdcf35556e4f5c8ff78df87208"
+  version "1.0.1"
+  sha256 "ce1023158961425279b47aa4de4c36bf6caff10d45b4bcc8f891571681527429"
 
   url "https://github.com/esc5221/claude-clipboard-cleaner/releases/download/v#{version}/ClaudeClipboardCleaner-#{version}-arm64.dmg"
   name "Claude Clipboard Cleaner"
