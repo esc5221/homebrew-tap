@@ -1,6 +1,6 @@
 cask "claude-pop" do
-  version "0.1.0"
-  sha256 "2b209cc233a344908434862793a5f87dbc68b4557dda64a336a0a89763345e06"
+  version "1.0.0"
+  sha256 "1f13fb6ca7884b8ede68a96abe502a21509b5fab0d27a34de019c568e5481383"
 
   url "https://github.com/esc5221/claude-pop/releases/download/v#{version}/Claude-Pop.dmg"
   name "Claude Pop"
